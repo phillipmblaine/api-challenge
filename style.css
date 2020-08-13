@@ -1,3 +1,180 @@
+/* Pokedex colors:
+#DEDEDE
+#DC0B2D
+#28AAFD
+#52AE5E
+#FCDE1B
+#01312B
+#232323
+#A08C0F
+#19699E */
+
+/* Universal Box Sizing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* General Styling */
 body {
-    background: darkorchid;
+  background-color: #232323;
+  color: #dc0b2d;
+  font-family: "Share Tech Mono", monospace, Courier, Helvetica;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  background-image: linear-gradient(290deg, #100e0e 50%, #ffce3c);
+  padding: 3px 39px;
+  border-radius: 1em 10em 1em 10em;
+  text-shadow: 2px 2px black;
+  margin: 10px auto;
+  padding: 9px 47px 9px 47px;
+  font-size: 4em;
+  /* font-weight: 900; */
+}
+
+/* Buttons */
+#randomPokemonButton {
+  background-color: rgb(24, 21, 19);
+  color: #ffad94;
+  font-family: "Share Tech Mono", monospace, Courier, Helvetica;
+  border: none;
+  margin: 10px auto;
+  padding: 9px 23px 9px 23px;
+  border-radius: 1em 10em 1em 10em;
+  text-shadow: 2px 2px black;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 2em;
+  transition: 0.1s;
+}
+
+#randomPokemonButton:hover {
+  background-color: orange;
+  color: red;
+  font-size: 2.4em;
+  transition: 0.5s;
+}
+
+#randomPokemonButton:active {
+  background-color: greenyellow;
+  color: #1d1e22;
+  transition: 0.1s;
+}
+
+#clearPokemonButton {
+  text-shadow: 1px 1px black;
+  background-color: rgb(14, 33, 33);
+  color: #d1bfa7;
+  font-family: "Share Tech Mono", monospace, Courier, Helvetica;
+  border: none;
+  margin: 10px auto;
+  padding: 7px 27px 7px 27px;
+  border-radius: 18em 1em 18em 1em;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+#clearPokemonButton:hover {
+  background-color: #9a9a9a;
+  color: #2f2fa2;
+  transition: 0.5s;
+  font-size: 1.3em;
+}
+
+#clearPokemonButton:active {
+  background-color: #dc0b2d;
+  color: #ffbf00;
+  font-size: 4em;
+  transition: 0.01s;
+}
+
+/* Animate in JS or combination of JS/CSS? */
+/* .animation {
+  transition-property: background-color;
+  transition-duration: 0.3s;
+} */
+
+/* Section where fetch data is entered into */
+section {
+  margin: auto;
+}
+
+.pokemon-div {
+  display: inline-block;
+  position: relative;
+  border: 4px outset #686868;
+  border-radius: 10px 10px 10px 10px;
+  margin: 8px;
+  background-image: linear-gradient(110deg, #1d1e22 50%, #ffd148);
+}
+
+/* section img:nth-child(2) {
+  border: 2px solid;
+} */
+
+.sprite-div {
+  position: relative;
+  border: 4px solid #1d1e22;
+  border-radius: 5px;
+  margin: 0;
+}
+/* Hover Menus for Pokemon Sprites, apply to div  */
+.dropdown-div {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #0b0d11;
+  border-radius: 5px 5px 20px 20px;
+  transition: 0.1s;
+}
+
+.dropdown-div:hover {
+  opacity: 0.9;
+  z-index: 1;
+  transition: 0.1s;
+}
+
+/* Text in hover menus */
+.pokemon-id-number-name-h2 {
+  width: 100%;
+  background: black;
+  color: rgb(238, 130, 238);
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.6em;
+  text-shadow: 2px 2px black;
+}
+
+.pokemon-types-h3 {
+  width: 100%;
+  color: rgb(60, 179, 113);
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px black;
+}
+
+.pokemon-abilities-h3 {
+  width: 100%;
+  color: rgb(255, 99, 71);
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px black;
 }
