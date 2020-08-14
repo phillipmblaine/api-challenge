@@ -107,6 +107,7 @@ h1 {
 } */
 
 /* Section where fetch data is entered into */
+
 section {
   margin: auto;
 }
@@ -177,4 +178,32 @@ section {
   padding: 10px;
   font-size: 1.2em;
   text-shadow: 2px 2px black;
+}
+
+/* Submit Button */
+#searchPokemon {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 3px 10px;
+  color: white;
+  background-color: black;
+}
+
+#submitButton {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 3px 10px;
+  background-color: gray;
+  color: white;
+}
+
+#submitButton:hover {
+  background-color: darkslategray;
+  transition: 0.2s;
+}
+
+#submitButton:active {
+  background-color: yellow;
+  color: blue;
+  transition: 0.1s;
 }

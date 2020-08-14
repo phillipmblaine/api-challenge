@@ -8,10 +8,29 @@
       href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>POKEMON GSC: POKEDEX</h1>
+    <br />
+    <form>
+      <label for="searchPokemon">Type a Pokemon Name or ID Number: </label>
+      <br /><br />
+      <input
+        type="text"
+        id="searchPokemon"
+        name="searchPokemon"
+        required
+        placeholder="Pokemon ID or Name"
+      />
+      <input type="submit" id="submitButton" />
+    </form>
+    <br />
+
     <input
       id="randomPokemonButton"
       type="button"

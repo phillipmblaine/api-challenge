@@ -30,6 +30,59 @@ const fetchPokeApi = function () {
         });
 };
 
+const fetchPokeApiSearch = function () {
+    pokedexNumber = document.getElementById("searchPokemon").value.toLowerCase();
+    const baseURL = `https://pokeapi.co/api/v2/pokemon/${pokedexNumber}`;
+    console.log("Executing fetchPokeApi");
+    fetch(baseURL)
+        .then(function (response) {
+            // console.log("response:", response);
+            return response.json();
+        })
+        .then(function (pokeApiResults) {
+            // console.log("pokeApiResults:", pokeApiResults);
+            displayPokeApi(pokeApiResults);
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+};
+
+document
+    .getElementById("submitButton").addEventListener("click", (event) => {
+        event.preventDefault();
+        if (
+            document.getElementById("searchPokemon").value == document.getElementById("searchPokemon").placeholder ||
+            document.getElementById("searchPokemon").value == ' ' ||
+            document.getElementById("searchPokemon").value == ''
+        ) {
+            console.log(`Please enter a valid Pokemon name or ID number between 001 and 251.`);
+            document.getElementById('searchPokemon').value = '';
+        } else {
+            console.log(`Searching for ${document.getElementById("searchPokemon").value}`);
+            fetchPokeApiSearch();
+        }
+    })
+
+// Separate fetch for individual search using onsubmit search bar
+// const fetchSearchPokeApi = function () {
+//     pokedexNumber = getRandomInt(1, 251);
+//     const baseURL = `https://pokeapi.co/api/v2/pokemon/${pokedexNumber}`;
+//     console.log("Executing fetchPokeApi");
+//     fetch(baseURL)
+//         .then(function (response) {
+//             // console.log("response:", response);
+//             return response.json();
+//         })
+//         .then(function (pokeApiResults) {
+//             // console.log("pokeApiResults:", pokeApiResults);
+//             displayPokeApi(pokeApiResults);
+//         })
+//         .catch(function (err) {
+//             console.log(err);
+//         });
+// };
+
 // Ideally, call this function within ".then" to pass access to the display function and display the Pokemon data. Handle all data within the display function and NOT the promise resolver (".then").
 
 function displayPokeApi(pokeApiResults) {
